@@ -1,12 +1,33 @@
-# React + Vite
+# Catálogo de Filmes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicativo em **React** criado com **Vite** que consome a API **OMDb** para permitir que usuários busquem filmes, vejam detalhes e montem uma lista de favoritos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Página de Busca**: campo de texto para pesquisar filmes.
+- **Exibição de Resultados**: pôster, título, ano e botão de detalhes.
+- **Paginação**: navegação pelas páginas de resultados.
+- **Página de Detalhes**: informações sobre o filme.
+- **Lista de Favoritos**: adicionar/remover filmes.
+- **Tratamento de Erros e Loading**: mensagens informativas na requisições.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/) - bundler rápido para desenvolvimento.
+- [React Router](https://reactrouter.com/) - navegação entre páginas.
+- [OMDb API](http://www.omdbapi.com/) - consulta de filmes.
+
+---
+
+Observações:
+
+- Para quem clonar o projeto, basta criar o .env com a própria chave da OMDb.
+
+- O projeto está totalmente responsivo e utiliza cores predominantes roxo e preto.
+
+- Favoritos são persistidos no localStorage.
