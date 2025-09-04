@@ -4,7 +4,7 @@ const BASE_URL = "https://www.omdbapi.com/";
 export async function fetchMovies(query, page = 1) {
   const response = await fetch(`${BASE_URL}?apikey=${API_KEY}&s=${query}&page=${page}`);
   const data = await response.json();
-  if (data.Response === "False") {
+  if (data.Response === "False" && data.Error !== "Movie not found!") {
     throw new Error(data.Error);
   }
   return data;

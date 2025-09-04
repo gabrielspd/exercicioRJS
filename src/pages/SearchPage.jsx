@@ -10,9 +10,12 @@ export default function SearchPage({ favorites, toggleFavorite, query }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    setPage(1);
+  }, [query]);
+
+  useEffect(() => {
     if (!query) {
       setMovies([]);
-      setPage(1);
       setTotalResults(0);
       setError(null);
       return;
@@ -21,15 +24,18 @@ export default function SearchPage({ favorites, toggleFavorite, query }) {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
+      setMovies([]);
+
       try {
         const data = await fetchMovies(query, page);
+
         if (data.Response === "False") {
           setMovies([]);
           setTotalResults(0);
           setError(data.Error);
         } else {
-          setMovies(data.Search);
-          setTotalResults(parseInt(data.totalResults));
+          setMovies([...data.Search]);
+          setTotalResults(parseInt(data.totalResults, 10));
         }
       } catch (err) {
         setMovies([]);

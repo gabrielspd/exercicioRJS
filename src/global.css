@@ -8,8 +8,8 @@
 
 /* Corpo da página */
 body {
-  background-color: #0d0d0d; /* preto escuro */
-  color: #f0f0f0; /* texto claro */
+  background-color: #0d0d0d;
+  color: #f0f0f0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -27,9 +27,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1c0d3c; /* roxo escuro */
+  background-color: #1c0d3c;
   padding: 10px 20px;
-  border-bottom: 2px solid #6a0dad; /* roxo vivo */
+  border-bottom: 2px solid #6a0dad;
 }
 
 .navbar .logo {
@@ -62,7 +62,7 @@ body {
   padding: 5px 10px;
   border-radius: 0 20px 20px 0;
   border: none;
-  background-color: #6a0dad; /* roxo vivo */
+  background-color: #6a0dad;
   color: #fff;
   cursor: pointer;
   transition: background 0.2s;
@@ -84,11 +84,10 @@ body {
 .movie-card {
   position: relative;
   background-color: #1c0d3c;
-  padding: 10px;
   border-radius: 10px;
+  text-align: center;
   max-width: 220px;
   margin: 0 auto;
-  text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -97,27 +96,39 @@ body {
   box-shadow: 0 5px 15px rgba(106, 13, 173, 0.5);
 }
 
-.movie-card img {
+/* Wrapper para imagem */
+.card-image-wrapper {
+  position: relative;
   width: 100%;
+  height: 0;
+  padding-bottom: 150%;
+  overflow: hidden;
   border-radius: 10px;
-  margin-bottom: 10px;
 }
 
+.card-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção, corta apenas o excesso */
+  border-radius: 10px;
+}
+
+/* Título do filme */
 .movie-card h3 {
   font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-.movie-card p {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
+  margin: 10px 0 5px;
+  padding: 0 5px;
+  word-break: break-word;
 }
 
 /* Botão de favorito posicionado */
 .movie-card button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   padding: 5px;
   border: none;
   border-radius: 50%;
@@ -130,7 +141,7 @@ body {
 
 .movie-card button:hover {
   background-color: #9b30ff;
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 .movie-card button.favorited {
